@@ -1,6 +1,6 @@
 {
     "name": "twelvetet-spn",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "description": "Scientific pitch notation parser/formatter for Node.js and the browser",
     "main": "lib/twelvetet-spn.js",
     "module": "es/twelvetet-spn.js",
