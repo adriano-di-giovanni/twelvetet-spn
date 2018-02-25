@@ -4,8 +4,30 @@
 
 ## Installation
 
+Install the latest stable version of `twelvetet-spn` using [npm](https://www.npmjs.com/):
+
 ```bash
 npm install twelvetet-spn
+```
+
+You can also [access the files on unpkg.com](https://unpkg.com/twelvetet-spn/).
+
+You can use `twelvetet-spn` with module bundlers.
+
+The `twelvetet-spn` [npm package](https://www.npmjs.com/package/twelvetet-spn) includes precompiled production and development [UMD](https://github.com/umdjs/umd) builds in the `dist/` folder. They can be used without a bundler.
+
+The UMD builds make `twelvetet-spn` available as `window.TwelveTetSPN` global variable.
+
+`twelvetet-spn` works in [any modern browser](http://caniuse.com/#feat=es5) and Node.js.
+
+## Usage
+
+```javascript
+import { format, parse } from 'twelvetet-spn'
+
+parse('A4') // [9, 4]
+format([9, 4]) // ['Gx4', 'A4', 'Bbb4']
+
 ```
 
 ## API
