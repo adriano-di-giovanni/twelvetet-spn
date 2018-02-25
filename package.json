@@ -1,6 +1,6 @@
 {
     "name": "twelvetet-spn",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Scientific pitch notation parser/formatter for Node.js and the browser",
     "main": "lib/twelvetet-spn.js",
     "module": "es/twelvetet-spn.js",
@@ -18,7 +18,7 @@
         "docs": "jsdoc2md --template README.hbs src/*.js > README.md",
         "lint": "eslint src",
         "precommit": "lint-staged && npm run docs && git add README.md",
-        "prepare": "npm run clean && npm run lint && npm test && npm run build",
+        "prepublish": "npm run clean && npm run lint && npm test && npm run build",
         "test": "cross-env BABEL_ENV=commonjs jest",
         "test:watch": "npm test -- --watch",
         "test:coverage": "npm test -- --coverage"
