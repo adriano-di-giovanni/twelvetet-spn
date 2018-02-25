@@ -21,7 +21,7 @@ if (env === 'es' || env === 'cjs') {
 
 if (env === 'development' || env === 'production') {
     config.output = { format: 'umd' }
-    config.name = 'twelvetet'
+    config.name = 'TwelveTetSPN'
     config.plugins.push(
         nodeResolve({
             browser: true,
