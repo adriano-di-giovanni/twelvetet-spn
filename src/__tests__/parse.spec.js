@@ -20,7 +20,7 @@ it('should return null if name is invalid', () => {
 const octaves = [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 octaves.forEach(octave => {
-    data.forEach(datum => {
+    data.filter(datum => datum[0] != null).forEach(datum => {
         const value = datum[0] + octave
         it(`should parse ${value}`, () => {
             expect(parse(value)).toEqual([datum[1], octave])

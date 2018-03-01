@@ -26,7 +26,11 @@ The UMD builds make `twelvetet-spn` available as `window.TwelveTetSPN` global va
 import { format, parse } from 'twelvetet-spn'
 
 parse('A4') // [9, 4]
-format([9, 4]) // ['Gx4', 'A4', 'Bbb4']
+
+// NOTE: `format()` always returns an array of five elements
+// ordered as follows: `[<double_sharp>, <sharp>, <natural>, <flat>, <double_flat>]`.
+// An element is `null` when there is no corresponding enharmonic equivalent.
+format([9, 4]) // ['Gx4', null, 'A4', null, 'Bbb4']
 
 ```
 

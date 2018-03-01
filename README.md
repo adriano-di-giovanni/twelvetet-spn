@@ -26,7 +26,11 @@ The UMD builds make `twelvetet-spn` available as `window.TwelveTetSPN` global va
 import { format, parse } from 'twelvetet-spn'
 
 parse('A4') // [9, 4]
-format([9, 4]) // ['Gx4', 'A4', 'Bbb4']
+
+// NOTE: `format()` always returns an array of five elements
+// ordered as follows: `[<double_sharp>, <sharp>, <natural>, <flat>, <double_flat>]`.
+// An element is `null` when there is no corresponding enharmonic equivalent.
+format([9, 4]) // ['Gx4', null, 'A4', null, 'Bbb4']
 
 ```
 
@@ -34,16 +38,18 @@ format([9, 4]) // ['Gx4', 'A4', 'Bbb4']
 
 
 * [twelvetet-spn](#module_twelvetet-spn)
-    * [.format(value)](#module_twelvetet-spn.format) ⇒ <code>String</code>
+    * [.format(value)](#module_twelvetet-spn.format) ⇒ <code>Array</code>
     * [.parse(value)](#module_twelvetet-spn.parse) ⇒ <code>Array.&lt;Number&gt;</code>
 
 <a name="module_twelvetet-spn.format"></a>
 
-### twelvetet-spn.format(value) ⇒ <code>String</code>
+### twelvetet-spn.format(value) ⇒ <code>Array</code>
 Formats a musical pitch to scientific pitch notation.
 
 **Kind**: static method of [<code>twelvetet-spn</code>](#module_twelvetet-spn)  
-**Returns**: <code>String</code> - Scientific pitch notation of a musical pitch.  
+**Returns**: <code>Array</code> - An array of scientific pitch notation enharmonic equivalents of the musical pitch.
+The array always has 5 elements. The order is always `[<double sharp>, <sharp>, <natural>, <flat>, <double flat>]`.
+An element of the array is `null` if there is no corresponding enharmonic equivalent  
 **Throws**:
 
 - <code>TypeError</code> Will throw an error if the `value` argument is not an array
