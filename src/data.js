@@ -37,7 +37,7 @@ export default [
 
     ['Ex', 6],
     ['F#', 6],
-    [null, 0],
+    [null, 6],
     ['Gb', 6],
     [null, 6],
 
