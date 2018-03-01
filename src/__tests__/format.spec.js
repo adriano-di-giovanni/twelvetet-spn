@@ -20,6 +20,10 @@ it('should return an array', () => {
     expect(Array.isArray(format([9, 4]))).toBe(true)
 })
 
-it('should always return 5 elements', () => {
+it('should always return an array of 5 elements', () => {
     expect(format([9, 4]).length).toBe(5)
+})
+
+it('should always return an array of nulls and strings', () => {
+    expect(format([9, 4]).every(e => e == null || typeof e === 'string'))
 })

@@ -31,5 +31,7 @@ export default value => {
         throw new Error('Missing or invalid octave. Integer expected.')
     }
 
-    return data.filter(datum => datum[1] === pitchClass).map(datum => datum[0] + octave)
+    return data
+        .filter(datum => datum[1] === pitchClass)
+        .map(datum => (datum[0] != null ? datum[0] + octave : null))
 }
